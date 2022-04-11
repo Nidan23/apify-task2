@@ -1,0 +1,17 @@
+- Make a request to this URL that returns a JSON - https://api.apify.com/v2/datasets/VuFwckCdhVhoLJJ08/items?clean=true&format=json
+- You get back an array of objects in the following shape (with a random number of objects):
+
+```json
+[
+    {
+        "productId": "dgdgfdfg",
+        "offerId": "545g43g34g",
+        "price": "$4.25"
+    }
+]
+```
+
+Each object contains data about a single offer. `offerId` is always unique while `productId` might be same for more offers → One product can have multiple offers.
+
+- Process the data in a way that the new array will only contain the cheapest offer for each product.
+- Send the data back to the same API URL from where you downloaded the data, the new array (with cheapest offers) should be send as the body/payload of the request. The format of the data should be the same.
